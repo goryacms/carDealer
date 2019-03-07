@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.cardealer.web.extuser.ExtUserBrowser"
+        extends="/com/haulmont/cuba/gui/app/security/user/browse/user-browse.xml"
+        messagesPack="com.company.cardealer.web.extuser"
+        xmlns:ext="http://schemas.haulmont.com/cuba/window-ext.xsd">
+    <layout>
+        <groupTable id="usersTable">
+            <columns>
+                <column id="country"
+                        ext:index="1"/>
+            </columns>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.cardealer.entity.Country"
+          extends="_local"
+          name="country-view">
+        <property name="name"/>
+        <property name="code"/>
+    </view>
+    <view class="com.company.cardealer.entity.ExtUser"
+          extends="user.browse"
+          name="user.browse"
+          overwrite="true">
+        <property name="country"
+                  view="_minimal">
+            <property name="code"/>
+        </property>
+    </view>
+    <view class="com.company.cardealer.entity.ExtUser"
+          extends="user.edit"
+          name="user.edit"
+          overwrite="true"
+          systemProperties="true">
+        <property name="country"
+                  view="_minimal">
+            <property name="code"/>
+        </property>
+    </view>
+</views>

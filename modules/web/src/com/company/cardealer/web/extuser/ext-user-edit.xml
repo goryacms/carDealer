@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.cardealer.web.extuser.ExtUserEditor"
+        extends="/com/haulmont/cuba/gui/app/security/user/edit/user-edit.xml"
+        messagesPack="com.company.cardealer.web.extuser">
+    <layout>
+        <groupBox id="propertiesBox">
+            <grid id="propertiesGrid">
+                <rows>
+                    <row id="propertiesRow">
+                        <fieldGroup id="fieldGroupRight">
+                            <column>
+                                <field property="country"/>
+                            </column>
+                        </fieldGroup>
+                    </row>
+                </rows>
+            </grid>
+        </groupBox>
+    </layout>
+</window>

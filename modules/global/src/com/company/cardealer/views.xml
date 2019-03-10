@@ -25,4 +25,76 @@
             <property name="code"/>
         </property>
     </view>
+    <view class="com.company.cardealer.entity.Automaker"
+          extends="_local"
+          name="automaker-edit">
+        <property name="country"
+                  view="_minimal">
+        </property>
+        <property name="carModel"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.cardealer.entity.CarModel"
+          extends="_local"
+          name="carModel-view">
+        <property name="automaker"
+                  view="_minimal"/>
+        <property name="equipment"
+                  view="_minimal">
+            <property name="cost"/>
+            <property name="carType"/>
+            <property name="note"/>
+        </property>
+    </view>
+    <view class="com.company.cardealer.entity.Automaker"
+          extends="_local"
+          name="automaker-view">
+        <property name="name"/>
+        <property name="code"/>
+        <property name="country"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+        <property name="carModel"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+    </view>
+    <view class="com.company.cardealer.entity.Car"
+          extends="_local"
+          name="car-view">
+        <property name="automaker"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+        <property name="carModel"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+        <property name="equipment"
+                  view="_minimal">
+            <property name="name"/>
+        </property>
+        <property name="name"/>
+        <property name="issueYear"/>
+        <property name="carCost"/>
+    </view>
+    <view class="com.company.cardealer.entity.CarPurchaseRequest"
+          extends="_local"
+          name="carPurchaseRequest-view">
+        <property name="car"
+                  view="_minimal"/>
+        <property name="person"
+                  view="_minimal">
+            <property name="phone"/>
+        </property>
+        <property name="manager"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.cardealer.entity.Person"
+          extends="_local"
+          name="person-view">
+        <property name="carPurchaseRequest"
+                  view="_minimal"/>
+    </view>
 </views>

@@ -4,5 +4,13 @@
           insertBefore="administration">
         <item screen="cardealer$Country.browse"/>
         <item screen="cardealer$ExtUser.browse"/>
+        <item screen="cardealer$Automaker.browse"/>
+        <item screen="cardealer$Color.browse"/>
+        <item screen="cardealer$CarModel.browse"/>
+        <item screen="cardealer$IndividualPerson.browse"/>
+        <item screen="cardealer$LegalPerson.browse"/>
+        <item screen="cardealer$Car.browse"/>
+        <item screen="cardealer$CarPurchaseRequest.browse"/>
+        <item screen="cardealer$Person.browse"/>
     </menu>
 </menu-config>

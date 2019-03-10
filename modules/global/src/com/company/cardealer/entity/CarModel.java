@@ -24,26 +24,15 @@ public class CarModel extends StandardEntity {
     @Column(name = "NAME", length = 50)
     protected String name;
 
-    @Composition
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToMany(mappedBy = "carModel")
-    protected List<Equipment> equipment;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "AUTOMAKER_ID")
     protected Automaker automaker;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "carModel")
-    protected Car car;
 
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "carModel")
+    protected List<Equipment> equipment;
 
     public void setEquipment(List<Equipment> equipment) {
         this.equipment = equipment;

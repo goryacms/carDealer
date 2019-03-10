@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.carpurchaserequest.CarPurchaseRequestEdit"
+        datasource="carPurchaseRequestDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.carpurchaserequest">
+    <dsContext>
+        <datasource id="carPurchaseRequestDs"
+                    class="com.company.cardealer.entity.CarPurchaseRequest"
+                    view="carPurchaseRequest-view"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="carPurchaseRequestDs">
+            <column width="250px">
+                <field property="car"/>
+                <field property="person"/>
+                <field property="carPaid"/>
+                <field property="amount"/>
+                <field property="tax"/>
+                <field property="manager"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

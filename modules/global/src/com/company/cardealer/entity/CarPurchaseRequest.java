@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @Table(name = "CARDEALER_CAR_PURCHASE_REQUEST")
 @Entity(name = "cardealer$CarPurchaseRequest")
@@ -19,7 +21,7 @@ public class CarPurchaseRequest extends StandardEntity {
     @JoinColumn(name = "CAR_ID")
     protected Car car;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PERSON_ID")
     protected Person person;
 
@@ -36,20 +38,22 @@ public class CarPurchaseRequest extends StandardEntity {
     @JoinColumn(name = "MANAGER_ID")
     protected ExtUser manager;
 
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
-    public Car getCar() {
-        return car;
+    public Person getPerson() {
+        return person;
     }
 
     public void setPerson(Person person) {
         this.person = person;
     }
 
-    public Person getPerson() {
-        return person;
+
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public Car getCar() {
+        return car;
     }
 
     public void setCarPaid(Boolean carPaid) {

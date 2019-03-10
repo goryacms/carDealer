@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.carmodel.CarModelEdit"
+        datasource="carModelDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.carmodel">
+    <dsContext>
+        <datasource id="carModelDs"
+                    class="com.company.cardealer.entity.CarModel"
+                    view="carModel-view">
+            <collectionDatasource id="equipmentDs"
+                                  property="equipment"/>
+        </datasource>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="carModelDs"
+                    height="110px"
+                    width="341px">
+            <column width="250px">
+                <field property="name"/>
+                <field property="automaker"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="equipmentBox"
+                  caption="msg://com.company.cardealer.entity/CarModel.equipment">
+            <table id="equipmentTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="cost"/>
+                    <column id="carType"/>
+                    <column id="note"/>
+                </columns>
+                <rows datasource="equipmentDs"/>
+                <buttonsPanel>
+                    <button action="equipmentTable.create"/>
+                    <button action="equipmentTable.edit"/>
+                    <button action="equipmentTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

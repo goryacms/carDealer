@@ -10,8 +10,12 @@
                   ref="cuba_ServerSelector"/>
         <property name="remoteServices">
             <map>
-                <entry key="cardealer_DefaultContryService"
-                       value="com.company.cardealer.service.DefaultContryService"/>
+                <entry key="cardealer_ContryService"
+                       value="com.company.cardealer.service.ContryService"/>
+                <entry key="cardealer_AutomakerService"
+                       value="com.company.cardealer.service.AutomakerService"/>
+                <entry key="cardealer_PersonService"
+                       value="com.company.cardealer.service.PersonService"/>
             </map>
         </property>
     </bean>

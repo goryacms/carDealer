@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.color.ColorEdit"
+        datasource="colorDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.color">
+    <dsContext>
+        <datasource id="colorDs"
+                    class="com.company.cardealer.entity.Color"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                modal="true"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="colorDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="code"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

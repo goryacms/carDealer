@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @NamePattern("%s|name")
 @Table(name = "CARDEALER_AUTOMAKER")
@@ -27,6 +29,18 @@ public class Automaker extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COUNTRY_ID")
     protected Country country;
+
+    @OneToMany(mappedBy = "automaker")
+    protected List<CarModel> carModel;
+
+    public void setCarModel(List<CarModel> carModel) {
+        this.carModel = carModel;
+    }
+
+    public List<CarModel> getCarModel() {
+        return carModel;
+    }
+
 
     public void setName(String name) {
         this.name = name;

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.car.CarBrowse"
+        focusComponent="carsTable"
+        lookupComponent="carsTable"
+        messagesPack="com.company.cardealer.web.car">
+    <dsContext>
+        <groupDatasource id="carsDs"
+                         class="com.company.cardealer.entity.Car"
+                         view="car-view">
+            <query>
+                <![CDATA[select e from cardealer$Car e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="carsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="carsTable"
+                datasource="carsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="carsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="automaker"/>
+                <column id="carModel"/>
+                <column id="equipment"/>
+                <column id="name"/>
+                <column id="issueYear"/>
+                <column id="carCost"/>
+            </columns>
+            <rows datasource="carsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="carsTable.create"/>
+                <button id="editBtn"
+                        action="carsTable.edit"/>
+                <button id="removeBtn"
+                        action="carsTable.remove"/>
+                <button id="refreshBtn"
+                        action="carsTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

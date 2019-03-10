@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.color.ColorBrowse"
+        focusComponent="colorsTable"
+        lookupComponent="colorsTable"
+        messagesPack="com.company.cardealer.web.color">
+    <dsContext>
+        <groupDatasource id="colorsDs"
+                         class="com.company.cardealer.entity.Color"
+                         view="_local">
+            <query>
+                <![CDATA[select e from cardealer$Color e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="colorsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="colorsTable"
+                datasource="colorsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="colorsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="code"/>
+            </columns>
+            <rows datasource="colorsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="colorsTable.create"/>
+                <button id="editBtn"
+                        action="colorsTable.edit"/>
+                <button id="removeBtn"
+                        action="colorsTable.remove"/>
+                <button id="refreshBtn"
+                        action="colorsTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

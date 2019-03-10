@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.legalperson.LegalPersonBrowse"
+        focusComponent="legalPersonsTable"
+        lookupComponent="legalPersonsTable"
+        messagesPack="com.company.cardealer.web.legalperson">
+    <dsContext>
+        <groupDatasource id="legalPersonsDs"
+                         class="com.company.cardealer.entity.LegalPerson"
+                         view="_local">
+            <query>
+                <![CDATA[select e from cardealer$LegalPerson e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="legalPersonsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="legalPersonsTable"
+                datasource="legalPersonsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="legalPersonsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="phone"/>
+                <column id="name"/>
+                <column id="innAndAddress"/>
+            </columns>
+            <rows datasource="legalPersonsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="legalPersonsTable.create"/>
+                <button id="editBtn"
+                        action="legalPersonsTable.edit"/>
+                <button id="removeBtn"
+                        action="legalPersonsTable.remove"/>
+                <button id="refreshBtn"
+                        action="legalPersonsTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

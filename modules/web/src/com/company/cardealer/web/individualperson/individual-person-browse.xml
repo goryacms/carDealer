@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.individualperson.IndividualPersonBrowse"
+        focusComponent="individualPersonsTable"
+        lookupComponent="individualPersonsTable"
+        messagesPack="com.company.cardealer.web.individualperson">
+    <dsContext>
+        <groupDatasource id="individualPersonsDs"
+                         class="com.company.cardealer.entity.IndividualPerson">
+            <query>
+                <![CDATA[select e from cardealer$IndividualPerson e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="individualPersonsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="individualPersonsTable"
+                datasource="individualPersonsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="individualPersonsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+                <action id="excel"/>
+            </actions>
+            <columns>
+                <column id="phone"/>
+                <column id="nameAndLastName"/>
+            </columns>
+            <rows datasource="individualPersonsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="individualPersonsTable.create"/>
+                <button id="editBtn"
+                        action="individualPersonsTable.edit"/>
+                <button id="removeBtn"
+                        action="individualPersonsTable.remove"/>
+                <button id="refreshBtn"
+                        action="individualPersonsTable.refresh"/>
+                <button id="excelButton"
+                        action="individualPersonsTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

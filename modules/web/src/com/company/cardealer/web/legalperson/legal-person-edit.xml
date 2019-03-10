@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.legalperson.LegalPersonEdit"
+        datasource="legalPersonDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.legalperson">
+    <dsContext>
+        <datasource id="legalPersonDs"
+                    class="com.company.cardealer.entity.LegalPerson"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="legalPersonDs">
+            <column width="250px">
+                <field property="phone"/>
+                <field property="name"/>
+                <field property="innAndAddress"
+                       rows="5"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

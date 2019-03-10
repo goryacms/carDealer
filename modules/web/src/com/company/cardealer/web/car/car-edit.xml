@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.car.CarEdit"
+        datasource="carDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.car">
+    <dsContext>
+        <datasource id="carDs"
+                    class="com.company.cardealer.entity.Car"
+                    view="car-view"/>
+        <collectionDatasource id="equipmentsDs"
+                              class="com.company.cardealer.entity.Equipment">
+            <query>
+                <![CDATA[select e from cardealer$Equipment e
+where e.carModel.id = :ds$carModelsDs]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="carModelsDs"
+                              class="com.company.cardealer.entity.CarModel">
+            <query>
+                <![CDATA[select e from cardealer$CarModel e
+where e.automaker.id = :ds$carDs]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="carDs">
+            <column width="250px">
+                <field property="automaker"/>
+                <field datasource="carDs"
+                       optionsDatasource="carModelsDs"
+                       property="carModel"/>
+                <field property="name"/>
+                <field property="issueYear"/>
+                <field property="carCost"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cardealer.web.equipment.EquipmentEdit"
+        datasource="equipmentDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cardealer.web.equipment">
+    <dsContext>
+        <datasource id="equipmentDs"
+                    class="com.company.cardealer.entity.Equipment"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="equipmentDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="cost"/>
+                <field property="carType"/>
+                <field property="note"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

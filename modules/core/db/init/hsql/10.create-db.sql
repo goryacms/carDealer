@@ -120,7 +120,7 @@ create table CARDEALER_PERSON (
     DELETED_BY varchar(50),
     DTYPE varchar(100),
     --
-    PHONE varchar(20),
+    PHONE varchar,
     --
     -- from cardealer$IndividualPerson
     NAME_AND_LAST_NAME varchar(255),
@@ -149,6 +149,7 @@ create table CARDEALER_CAR_PURCHASE_REQUEST (
     AMOUNT decimal(19, 2),
     TAX decimal(19, 2),
     MANAGER_ID varchar(36),
+    STATE varchar(255),
     --
     primary key (ID)
 )^
@@ -158,3 +159,19 @@ alter table SEC_USER add column COUNTRY_ID varchar(36) ^
 alter table SEC_USER add column DTYPE varchar(100) ^
 update SEC_USER set DTYPE = 'cardealer$ExtUser' where DTYPE is null ^
 -- end SEC_USER
+-- begin CARDEALER_PROC_ATTACHMENT
+create table CARDEALER_PROC_ATTACHMENT (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    CAR_PURCHASE_REQUEST_ID varchar(36),
+    --
+    primary key (ID)
+)^
+-- end CARDEALER_PROC_ATTACHMENT

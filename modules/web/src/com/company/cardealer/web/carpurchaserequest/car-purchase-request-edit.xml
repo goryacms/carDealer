@@ -9,6 +9,15 @@
         <datasource id="carPurchaseRequestDs"
                     class="com.company.cardealer.entity.CarPurchaseRequest"
                     view="carPurchaseRequest-view"/>
+        <datasource id="carPurchaseRequestDsBpm"
+                    class="com.company.cardealer.entity.CarPurchaseRequest"
+                    view="_local"/>
+        <collectionDatasource id="procAttachmentsDs"
+                              class="com.company.cardealer.entity.ProcAttachment"
+                              view="procAttachment-view">
+            <query><![CDATA[select a from bpm$ProcAttachment a
+where a.procInstance.entityId = :ds$carPurchaseRequestDsBpm order by a.createTs]]></query>
+        </collectionDatasource>
     </dsContext>
     <dialogMode forceDialog="true"
                 height="AUTO"
@@ -24,8 +33,34 @@
                 <field property="amount"/>
                 <field property="tax"/>
                 <field property="manager"/>
+                <field property="state" editable="false"/>
             </column>
         </fieldGroup>
+
+
+        <groupBox id="procActionsBox"
+                  caption="msg://process"
+                  orientation="vertical"
+                  spacing="true"
+                  width="AUTO">
+            <frame id="procActionsFrame" screen="procActionsFrame"/>
+        </groupBox>
+        <groupBox caption="msg://attachments"
+                  width="700px"
+                  height="300px">
+            <table id="attachmentsTable"
+                   height="100%"
+                   width="100%">
+                <columns>
+                    <column id="file.name"/>
+                    <column id="author"/>
+                    <column id="type"/>
+                    <column id="comment" maxTextLength="50"/>
+                </columns>
+                <rows datasource="procAttachmentsDs"/>
+            </table>
+        </groupBox>
+
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

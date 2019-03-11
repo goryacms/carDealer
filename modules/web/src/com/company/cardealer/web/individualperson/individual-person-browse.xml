@@ -7,7 +7,8 @@
         messagesPack="com.company.cardealer.web.individualperson">
     <dsContext>
         <groupDatasource id="individualPersonsDs"
-                         class="com.company.cardealer.entity.IndividualPerson">
+                         class="com.company.cardealer.entity.IndividualPerson"
+                         view="individualPerson-view">
             <query>
                 <![CDATA[select e from cardealer$IndividualPerson e]]>
             </query>

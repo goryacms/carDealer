@@ -14,5 +14,6 @@
         <class>com.company.cardealer.entity.LegalPerson</class>
         <class>com.company.cardealer.entity.IndividualPerson</class>
         <class>com.company.cardealer.entity.CarPurchaseRequest</class>
+        <class>com.company.cardealer.entity.ProcAttachment</class>
     </persistence-unit>
 </persistence>

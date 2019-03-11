@@ -4,9 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.Lob;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.MappedSuperclass;
 
-@NamePattern("%s|name")
 @Entity(name = "cardealer$LegalPerson")
+@NamePattern("%s|name")
 public class LegalPerson extends Person {
     private static final long serialVersionUID = 6086781293023962913L;
 

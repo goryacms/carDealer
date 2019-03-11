@@ -41,6 +41,18 @@ public class CarPurchaseRequest extends StandardEntity {
     @JoinColumn(name = "MANAGER_ID")
     protected ExtUser manager;
 
+    @Column(name = "STATE")
+    protected String state;
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+
     public Person getPerson() {
         return person;
     }

@@ -7,8 +7,7 @@
         messagesPack="com.company.cardealer.web.legalperson">
     <dsContext>
         <datasource id="legalPersonDs"
-                    class="com.company.cardealer.entity.LegalPerson"
-                    view="_local"/>
+                    class="com.company.cardealer.entity.LegalPerson"/>
     </dsContext>
     <dialogMode forceDialog="true"
                 height="AUTO"

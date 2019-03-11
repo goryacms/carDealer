@@ -3,9 +3,10 @@ package com.company.cardealer.entity;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.MappedSuperclass;
 
-@NamePattern("%s|nameAndLastName")
 @Entity(name = "cardealer$IndividualPerson")
+@NamePattern("%s|nameAndLastName")
 public class IndividualPerson extends Person {
     private static final long serialVersionUID = 3534930297712073619L;
 

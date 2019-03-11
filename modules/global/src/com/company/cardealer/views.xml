@@ -106,4 +106,20 @@
         <property name="carPurchaseRequest"
                   view="_minimal"/>
     </view>
+    <view class="com.company.cardealer.entity.LegalPerson"
+          extends="_local"
+          name="legalPerson-view">
+    </view>
+    <view class="com.company.cardealer.entity.IndividualPerson"
+          extends="_local"
+          name="individualPerson-view">
+    </view>
+    <view class="com.company.cardealer.entity.ProcAttachment"
+          extends="_local"
+          name="procAttachment-view">
+        <property name="carPurchaseRequest"
+                  view="_minimal">
+            <property name="state"/>
+        </property>
+    </view>
 </views>

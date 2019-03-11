@@ -34,5 +34,8 @@
         <entity class="com.company.cardealer.entity.CarPurchaseRequest">
             <include re=".*"/>
         </entity>
+        <entity class="com.company.cardealer.entity.ProcAttachment">
+            <include re=".*"/>
+        </entity>
     </entities>
 </fts-config>

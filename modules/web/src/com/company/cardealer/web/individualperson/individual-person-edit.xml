@@ -7,12 +7,10 @@
         messagesPack="com.company.cardealer.web.individualperson">
     <dsContext>
         <datasource id="individualPersonDs"
-                    class="com.company.cardealer.entity.IndividualPerson"
-                    view="_local"/>
+                    class="com.company.cardealer.entity.IndividualPerson"/>
     </dsContext>
-    <dialogMode forceDialog="true"
-                height="AUTO"
-                width="600"/>
+    <dialogMode height="600"
+                width="800"/>
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"

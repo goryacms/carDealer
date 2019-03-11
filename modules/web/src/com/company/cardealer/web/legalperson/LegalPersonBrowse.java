@@ -1,6 +1,5 @@
 package com.company.cardealer.web.legalperson;
 
-import com.company.cardealer.entity.IndividualPerson;
 import com.company.cardealer.entity.LegalPerson;
 import com.company.cardealer.service.PersonService;
 import com.haulmont.cuba.gui.components.AbstractLookup;
@@ -12,7 +11,7 @@ import java.util.Map;
 
 public class LegalPersonBrowse extends AbstractLookup {
     @Inject
-    private GroupTable<LegalPerson> LegalPersonsTable;
+    private GroupTable<LegalPerson> legalPersonsTable;
 
     @Inject
     private PersonService personService;
@@ -21,7 +20,7 @@ public class LegalPersonBrowse extends AbstractLookup {
     public void init(Map<String, Object> params) {
         super.init(params);
 
-        LegalPersonsTable.addGeneratedColumn(
+        legalPersonsTable.addGeneratedColumn(
                 getMessage("count"), entity -> {
                     Integer countDocs = personService.getCountDocs(entity.getId());
                     return new Table.PlainTextCell(countDocs.toString());

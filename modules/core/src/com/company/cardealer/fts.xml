@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fts-config xmlns="http://schemas.haulmont.com/cuba/fts.xsd">
+    <entities>
+        <entity class="com.company.cardealer.entity.Country">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.ExtUser">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.Automaker">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.Color">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.Equipment">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.CarModel">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.Car">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.Person">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.LegalPerson">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.IndividualPerson">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.cardealer.entity.CarPurchaseRequest">
+            <include re=".*"/>
+        </entity>
+    </entities>
+</fts-config>

@@ -14,6 +14,15 @@
                   view="_minimal">
             <property name="code"/>
         </property>
+        <property name="userRoles"
+                  view="_minimal">
+            <property name="user"
+                      view="_minimal">
+                <property name="email"/>
+            </property>
+            <property name="role"
+                      view="_minimal"/>
+        </property>
     </view>
     <view class="com.company.cardealer.entity.ExtUser"
           extends="user.edit"

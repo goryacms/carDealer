@@ -32,6 +32,7 @@ public class Car extends StandardEntity {
     @JoinColumn(name = "EQUIPMENT_ID")
     protected Equipment equipment;
 
+    @MetaProperty(related = {"automaker", "carModel", "equipment"})
     @Column(name = "NAME")
     protected String name;
 

@@ -18,6 +18,8 @@
                        value="com.company.cardealer.service.PersonService"/>
                 <entry key="cardealer_EmailSenderService"
                        value="com.company.cardealer.service.EmailSenderService"/>
+                <entry key="cardealer_CarPurchaseRequestService"
+                       value="com.company.cardealer.service.CarPurchaseRequestService"/>
             </map>
         </property>
     </bean>

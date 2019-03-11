@@ -1,25 +1,16 @@
 package com.company.cardealer.web.automaker;
 
+import com.company.cardealer.entity.Automaker;
 import com.company.cardealer.entity.Country;
-import com.company.cardealer.entity.ExtUser;
 import com.company.cardealer.service.ContryService;
 import com.haulmont.cuba.gui.components.AbstractEditor;
-import com.company.cardealer.entity.Automaker;
 import com.haulmont.cuba.gui.components.Field;
 import com.haulmont.cuba.gui.components.TextField;
-import com.haulmont.cuba.gui.data.CollectionDatasource;
-import com.haulmont.cuba.gui.data.Datasource;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.Map;
-import java.util.UUID;
-
-import static java.util.Optional.ofNullable;
 
 public class AutomakerEdit extends AbstractEditor<Automaker> {
-    @Inject
-    protected Datasource<Automaker> automakerDs;
 
     @Named("fieldGroup.country")
     protected Field country;

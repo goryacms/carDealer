@@ -2,6 +2,8 @@ package com.company.cardealer.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NumberFormat;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -33,6 +35,7 @@ public class Car extends StandardEntity {
     @Column(name = "NAME")
     protected String name;
 
+    @MetaProperty(datatype = "year")
     @Column(name = "ISSUE_YEAR")
     protected Integer issueYear;
 

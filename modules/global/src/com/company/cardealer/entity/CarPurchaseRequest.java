@@ -9,9 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.TrackEditScreenHistory;
+
 import java.util.List;
 import javax.persistence.OneToMany;
 
+@TrackEditScreenHistory
 @Table(name = "CARDEALER_CAR_PURCHASE_REQUEST")
 @Entity(name = "cardealer$CarPurchaseRequest")
 public class CarPurchaseRequest extends StandardEntity {

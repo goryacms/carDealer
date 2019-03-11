@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.carmodel.CarModelBrowseExcel"
+        focusComponent="carModelsTable"
+        lookupComponent="carModelsTable"
+        messagesPack="com.company.cardealer.web.carmodel">
+    <dsContext>
+        <groupDatasource id="carModelsDs"
+                         class="com.company.cardealer.entity.CarModel"
+                         view="_local">
+            <query>
+                <![CDATA[select e from cardealer$CarModel e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="carModelsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="carModelsTable"
+                datasource="carModelsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="carModelsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="carModelsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="carModelsTable.create"/>
+                <button id="editBtn"
+                        action="carModelsTable.edit"/>
+                <button id="removeBtn"
+                        action="carModelsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

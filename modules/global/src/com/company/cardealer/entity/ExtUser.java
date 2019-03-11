@@ -11,7 +11,7 @@ import com.haulmont.chile.core.annotations.NamePattern;
 
 import java.math.BigDecimal;
 
-@NamePattern("%s|firstName")
+@NamePattern("%s %s|firstName,login")
 @Extends(User.class)
 @Entity(name = "cardealer$ExtUser")
 public class ExtUser extends User {

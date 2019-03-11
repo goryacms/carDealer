@@ -10,5 +10,6 @@
         <item screen="cardealer$LegalPerson.browse"/>
         <item screen="cardealer$Car.browse"/>
         <item screen="cardealer$CarPurchaseRequest.browse"/>
+        <item screen="cardealer$CarModel.browseExcel"/>
     </menu>
 </menu-config>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cardealer.web.carpurchaserequest.CarPurchaseRequestBrowseExcel"
+        focusComponent="carPurchaseRequestsTable"
+        lookupComponent="carPurchaseRequestsTable"
+        messagesPack="com.company.cardealer.web.carpurchaserequest">
+    <dsContext>
+        <groupDatasource id="carPurchaseRequestsDs"
+                         class="com.company.cardealer.entity.CarPurchaseRequest"
+                         view="carPurchaseRequest-view">
+            <query>
+                <![CDATA[select e from cardealer$CarPurchaseRequest e
+where e.carPaid = true]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="carPurchaseRequestsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="carPurchaseRequestsTable"
+                datasource="carPurchaseRequestsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="carPurchaseRequestsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="car"/>
+                <column id="person"/>
+                <column id="carPaid"/>
+                <column id="amount"/>
+                <column id="tax"/>
+                <column id="manager"/>
+            </columns>
+            <rows datasource="carPurchaseRequestsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="carPurchaseRequestsTable.create"/>
+                <button id="editBtn"
+                        action="carPurchaseRequestsTable.edit"/>
+                <button id="removeBtn"
+                        action="carPurchaseRequestsTable.remove"/>
+                <button id="refreshBtn"
+                        action="carPurchaseRequestsTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

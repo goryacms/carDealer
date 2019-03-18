@@ -18,9 +18,6 @@ import java.util.UUID;
 public class ContryServiceBean implements ContryService {
 
     @Inject
-    private DataManager dataManager;
-
-    @Inject
     private Persistence persistence;
 
     @Override

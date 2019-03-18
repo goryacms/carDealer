@@ -36,7 +36,6 @@ where e.carPaid = true]]>
             </actions>
             <columns>
                 <column id="car"/>
-                <column id="person"/>
                 <column id="carPaid"/>
                 <column id="amount"/>
                 <column id="tax"/>

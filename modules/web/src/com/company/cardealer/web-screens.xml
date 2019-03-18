@@ -36,8 +36,6 @@
             template="com/company/cardealer/web/carpurchaserequest/car-purchase-request-browse.xml"/>
     <screen id="cardealer$CarPurchaseRequest.edit"
             template="com/company/cardealer/web/carpurchaserequest/car-purchase-request-edit.xml"/>
-    <screen id="cardealer$Person.browse"
-            template="com/company/cardealer/web/person/person-browse.xml"/>
     <screen id="cardealer$CarPurchaseRequest.browseExcel"
             template="com/company/cardealer/web/carpurchaserequest/car-purchase-request-browse-excel.xml"/>
     <screen id="cardealer$CarModel.browseExcel"

@@ -36,8 +36,6 @@
             <columns>
                 <column id="car"
                         link="true"/>
-                <column id="person"
-                        link="true"/>
                 <column id="carPaid"/>
                 <column id="amount"/>
                 <column id="tax"/>

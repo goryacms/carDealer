@@ -102,36 +102,13 @@ create table CARDEALER_CAR (
     CAR_MODEL_ID varchar(36),
     EQUIPMENT_ID varchar(36),
     NAME varchar(255),
-    ISSUE_YEAR integer,
+    ISSUE_YEAR varchar(20),
     CAR_COST decimal(19, 2),
     --
     primary key (ID)
 )^
 -- end CARDEALER_CAR
--- begin CARDEALER_PERSON
-create table CARDEALER_PERSON (
-    ID varchar(36) not null,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    DTYPE varchar(100),
-    --
-    PHONE varchar,
-    --
-    -- from cardealer$IndividualPerson
-    NAME_AND_LAST_NAME varchar(255),
-    --
-    -- from cardealer$LegalPerson
-    NAME varchar(75),
-    INN_AND_ADDRESS longvarchar,
-    --
-    primary key (ID)
-)^
--- end CARDEALER_PERSON
+
 -- begin CARDEALER_CAR_PURCHASE_REQUEST
 create table CARDEALER_CAR_PURCHASE_REQUEST (
     ID varchar(36) not null,
@@ -144,8 +121,9 @@ create table CARDEALER_CAR_PURCHASE_REQUEST (
     DELETED_BY varchar(50),
     --
     CAR_ID varchar(36),
-    PERSON_ID varchar(36),
     CAR_PAID boolean,
+    INDIVIDUAL_PERSON_ID varchar(36),
+    LEGAL_PERSON_ID varchar(36),
     AMOUNT decimal(19, 2),
     TAX decimal(19, 2),
     MANAGER_ID varchar(36),
@@ -175,3 +153,38 @@ create table CARDEALER_PROC_ATTACHMENT (
     primary key (ID)
 )^
 -- end CARDEALER_PROC_ATTACHMENT
+-- begin CARDEALER_LEGAL_PERSON
+create table CARDEALER_LEGAL_PERSON (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    PHONE varchar(20),
+    --
+    NAME varchar(75),
+    INN_AND_ADDRESS longvarchar,
+    --
+    primary key (ID)
+)^
+-- end CARDEALER_LEGAL_PERSON
+-- begin CARDEALER_INDIVIDUAL_PERSON
+create table CARDEALER_INDIVIDUAL_PERSON (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    PHONE varchar(20),
+    --
+    NAME_AND_LAST_NAME varchar(255),
+    --
+    primary key (ID)
+)^
+-- end CARDEALER_INDIVIDUAL_PERSON

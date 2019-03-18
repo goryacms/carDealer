@@ -15,8 +15,10 @@
         <collectionDatasource id="procAttachmentsDs"
                               class="com.company.cardealer.entity.ProcAttachment"
                               view="procAttachment-view">
-            <query><![CDATA[select a from bpm$ProcAttachment a
-where a.procInstance.entityId = :ds$carPurchaseRequestDsBpm order by a.createTs]]></query>
+            <query>
+                <![CDATA[select a from bpm$ProcAttachment a
+where a.procInstance.entityId = :ds$carPurchaseRequestDsBpm order by a.createTs]]>
+            </query>
         </collectionDatasource>
     </dsContext>
     <dialogMode forceDialog="true"
@@ -28,26 +30,27 @@ where a.procInstance.entityId = :ds$carPurchaseRequestDsBpm order by a.createTs]
                     datasource="carPurchaseRequestDs">
             <column width="250px">
                 <field property="car"/>
-                <field property="person"/>
+                <field property="individualPerson"/>
+                <field property="legalPerson"/>
                 <field property="carPaid"/>
                 <field property="amount"/>
                 <field property="tax"/>
                 <field property="manager"/>
-                <field property="state" editable="false"/>
+                <field editable="false"
+                       property="state"/>
             </column>
         </fieldGroup>
-
-
         <groupBox id="procActionsBox"
                   caption="msg://process"
                   orientation="vertical"
                   spacing="true"
                   width="AUTO">
-            <frame id="procActionsFrame" screen="procActionsFrame"/>
+            <frame id="procActionsFrame"
+                   screen="procActionsFrame"/>
         </groupBox>
         <groupBox caption="msg://attachments"
-                  width="700px"
-                  height="300px">
+                  height="300px"
+                  width="700px">
             <table id="attachmentsTable"
                    height="100%"
                    width="100%">
@@ -55,12 +58,12 @@ where a.procInstance.entityId = :ds$carPurchaseRequestDsBpm order by a.createTs]
                     <column id="file.name"/>
                     <column id="author"/>
                     <column id="type"/>
-                    <column id="comment" maxTextLength="50"/>
+                    <column id="comment"
+                            maxTextLength="50"/>
                 </columns>
                 <rows datasource="procAttachmentsDs"/>
             </table>
         </groupBox>
-
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

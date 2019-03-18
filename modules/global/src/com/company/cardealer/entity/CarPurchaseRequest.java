@@ -24,12 +24,16 @@ public class CarPurchaseRequest extends StandardEntity {
     @JoinColumn(name = "CAR_ID")
     protected Car car;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PERSON_ID")
-    protected Person person;
-
     @Column(name = "CAR_PAID")
     protected Boolean carPaid;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "INDIVIDUAL_PERSON_ID")
+    protected IndividualPerson individualPerson;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "LEGAL_PERSON_ID")
+    protected LegalPerson legalPerson;
 
     @Column(name = "AMOUNT")
     protected BigDecimal amount;
@@ -44,6 +48,24 @@ public class CarPurchaseRequest extends StandardEntity {
     @Column(name = "STATE")
     protected String state;
 
+
+    public void setIndividualPerson(IndividualPerson individualPerson) {
+        this.individualPerson = individualPerson;
+    }
+
+    public IndividualPerson getIndividualPerson() {
+        return individualPerson;
+    }
+
+    public void setLegalPerson(LegalPerson legalPerson) {
+        this.legalPerson = legalPerson;
+    }
+
+    public LegalPerson getLegalPerson() {
+        return legalPerson;
+    }
+
+
     public void setState(String state) {
         this.state = state;
     }
@@ -52,14 +74,6 @@ public class CarPurchaseRequest extends StandardEntity {
         return state;
     }
 
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
 
 

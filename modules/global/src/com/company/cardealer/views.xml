@@ -93,18 +93,16 @@
           name="carPurchaseRequest-view">
         <property name="car"
                   view="_minimal"/>
-        <property name="person"
+        <property name="manager"
+                  view="_minimal"/>
+        <property name="individualPerson"
                   view="_minimal">
             <property name="phone"/>
         </property>
-        <property name="manager"
-                  view="_minimal"/>
-    </view>
-    <view class="com.company.cardealer.entity.Person"
-          extends="_local"
-          name="person-view">
-        <property name="carPurchaseRequest"
-                  view="_minimal"/>
+        <property name="legalPerson"
+                  view="_minimal">
+            <property name="phone"/>
+        </property>
     </view>
     <view class="com.company.cardealer.entity.LegalPerson"
           extends="_local"

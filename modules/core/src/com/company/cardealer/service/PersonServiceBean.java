@@ -19,7 +19,7 @@ public class PersonServiceBean implements PersonService {
                 //.load(Person.class)
                 .load(CarPurchaseRequest.class)
                 //.query("select p.carPurchaseRequest from cardealer$Person p where p.person.id = :idParam")
-                .query("select p from cardealer$CarPurchaseRequest p where p.person.id = :idParam")
+                .query("select p from cardealer$CarPurchaseRequest p where p.individualPerson.id = :idParam or p.legalPerson.id = :idParam")
                 .parameter("idParam", id)
                 .view("carPurchaseRequest-view")
                 //.view("person-view")

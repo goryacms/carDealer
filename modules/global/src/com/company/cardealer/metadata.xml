@@ -2,8 +2,8 @@
 <metadata xmlns="http://schemas.haulmont.com/cuba/metadata.xsd">
 
     <datatypes>
-        <datatype id="phone" class="com.company.cardealer.datatypes.PhoneDataType"/>
-        <datatype id="year" class="com.company.cardealer.datatypes.YearDatatype"/>
+        <datatype id="phone" class="com.company.cardealer.datatypes.PhoneDataType" sqlType="varchar(20)"/>
+        <datatype id="year" class="com.company.cardealer.datatypes.YearDatatype" sqlType="varchar(20)"/>
     </datatypes>
 
     <metadata-model root-package="com.company.cardealer" namespace="cardealer"/>

@@ -5,7 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Lob;
 import com.haulmont.chile.core.annotations.NamePattern;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
+@Table(name = "CARDEALER_LEGAL_PERSON")
 @Entity(name = "cardealer$LegalPerson")
 @NamePattern("%s|name")
 public class LegalPerson extends Person {
